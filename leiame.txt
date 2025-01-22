@@ -1,0 +1,8 @@
+*** INFORMAÇÕES SOBRE O PROJETO ***
+
+[Banco de dados]
+    * As tabelas devem ser criadas através das migrations (crie o banco antes de rodas as migrations);
+    * Irei deixar o arquivo .env.example com todas as configurações do arquivo .env original (copiar e colar);
+
+[Requisições]
+    * Na raiz do projeto, tem a pasta postman_collections, com a coleção de requisições, pode importa-las pelo Postman

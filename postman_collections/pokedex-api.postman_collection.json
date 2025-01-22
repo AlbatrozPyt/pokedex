@@ -1,0 +1,264 @@
+{
+	"info": {
+		"_postman_id": "21553771-a84f-4e58-82d8-129c2edec26a",
+		"name": "pokedex-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29331753"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "signup",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Matheus\",\r\n    \"lastname\": \"Enrike\",\r\n    \"birthdate\": \"2007-03-28\",\r\n    \"city\": \"SP\",\r\n    \"username\": \"kkzz\",\r\n    \"password\": \"passkey\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/pokedex/api/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"pokedex",
+								"api",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "signin",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"kkzz\",\r\n    \"password\": \"passkey\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/pokedex/api/signin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"pokedex",
+								"api",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/pokedex/api/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"pokedex",
+								"api",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "pokemon",
+			"item": [
+				{
+					"name": "list",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJra3p6IiwidGltZXN0YW1wIjoxNzM3NDk0NzE4fQ==.ZjNlNzU2MWY3Y2Q5OGRjYmE2ZTZmNTgyNzc3NmUyNjkxOTg5NWUyMGU4NWJjYzgzMTc1NmM2OGJjNTlmM2I0Nw==",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/pokedex/api/pokemon/list",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"pokedex",
+								"api",
+								"pokemon",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "read",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJra3p6IiwidGltZXN0YW1wIjoxNzM3NDk0NzE4fQ==.ZjNlNzU2MWY3Y2Q5OGRjYmE2ZTZmNTgyNzc3NmUyNjkxOTg5NWUyMGU4NWJjYzgzMTc1NmM2OGJjNTlmM2I0Nw==",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 1,\r\n  \"name\": {\r\n    \"english\": \"Bulbasaur\"\r\n  },\r\n  \"type\": [\"Grass\", \"Poison\"],\r\n  \"base\": {\r\n    \"HP\": 45,\r\n    \"Attack\": 49,\r\n    \"Defense\": 49,\r\n    \"Sp. Attack\": 65,\r\n    \"Sp. Defense\": 65,\r\n    \"Speed\": 45\r\n  },\r\n  \"species\": \"Seed Pokémon\",\r\n  \"description\": \"Bulbasaur can be seen napping in bright sunlight. It’s said to grow strong by soaking up nutrients from the sun. The more sunlight it absorbs, the greener its body becomes.\",\r\n  \"evolution\": {\r\n    \"prev\": [[\"1\", \"level 16\"]],\r\n    \"next\":  [[\"2\", \"level 32\"], [\"3\", \"level 64\"]]\r\n  },\r\n  \"profile\": {\r\n    \"height\": \"0.7 m\",\r\n    \"weight\": \"6.9 kg\",\r\n    \"egg\": [\"Grass\", \"Poison\"],\r\n    \"ability\": [\r\n      [\"Overgrow\", \"false\"]\r\n    ],\r\n    \"gender\": \"Female\"\r\n  },\r\n  \"image\": {\r\n    \"hires\": \"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png\"\r\n  }\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/pokedex/api/pokemon/read",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"pokedex",
+								"api",
+								"pokemon",
+								"read"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "view",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJra3p6IiwidGltZXN0YW1wIjoxNzM3NDk0NzE4fQ==.ZjNlNzU2MWY3Y2Q5OGRjYmE2ZTZmNTgyNzc3NmUyNjkxOTg5NWUyMGU4NWJjYzgzMTc1NmM2OGJjNTlmM2I0Nw==",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/pokedex/api/pokemon/view",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"pokedex",
+								"api",
+								"pokemon",
+								"view"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "trainers",
+			"item": [
+				{
+					"name": "data",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJra3p6IiwidGltZXN0YW1wIjoxNzM3NDk0NzE4fQ==.ZjNlNzU2MWY3Y2Q5OGRjYmE2ZTZmNTgyNzc3NmUyNjkxOTg5NWUyMGU4NWJjYzgzMTc1NmM2OGJjNTlmM2I0Nw==",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/pokedex/api/trainer/data",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"pokedex",
+								"api",
+								"trainer",
+								"data"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
