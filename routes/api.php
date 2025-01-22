@@ -7,6 +7,7 @@ use App\Http\Middleware\JwtAuthorize;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
+// Configuração das rotas
 
 // no auth
 Route::post('/signup', [AuthController::class, 'register']);

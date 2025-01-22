@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Pokemon extends Model
 {
+    // Campos preenchiveis
     protected $fillable = [
         'id',
         'name',
@@ -21,7 +22,10 @@ class Pokemon extends Model
         'image',
     ];
 
+    // Sem timestamp
     public $timestamps = false;
+
+    // Formatando as valores recebidos pelos atributos
 
     public function setNameAttribute($value)
     {

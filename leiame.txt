@@ -1,5 +1,11 @@
 *** INFORMAÇÕES SOBRE O PROJETO ***
 
+[Para rodar o projeto]
+    * Adicione a pasta do projeto no seu servidor local (xampp ou laragon), de preferencia o laragon;
+    * Configure o seu arquivo .env, a partir do arquivo .env.example;
+    * na raiz do projeto rode o seguinte comando: "php artisan migrate";
+    * verifique se as tabelas foram criadas e teste a rota de registro (signup) ou de login (signin);
+
 [Banco de dados]
     * As tabelas devem ser criadas através das migrations (crie o banco antes de rodas as migrations);
     * Irei deixar o arquivo .env.example com todas as configurações do arquivo .env original (copiar e colar);
